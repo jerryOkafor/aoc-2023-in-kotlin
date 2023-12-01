@@ -27,18 +27,17 @@ fun main() {
         }
 
         return input.sumOf { line ->
-
             //find the first occurence of any of the keys
-            val minKey = line.findAnyOf(digitMap.keys)!!.second
+            val fistItemKey = line.findAnyOf(digitMap.keys)!!.second
 
             //find the last occrence of any of the keys
-            val maxkey = line.findLastAnyOf(digitMap.keys)!!.second
+            val lastItemkey = line.findLastAnyOf(digitMap.keys)!!.second
 
-            //use the look map and transform
-            val min = digitMap.getValue(minKey)
-            val max = digitMap.getValue(maxkey)
+            //use the lookup map and transform
+            val firtDigit = digitMap.getValue(fistItemKey)
+            val lastDigit = digitMap.getValue(lastItemkey)
 
-            "$min$max".toInt()
+            "$firtDigit$lastDigit".toInt()
         }
     }
 
