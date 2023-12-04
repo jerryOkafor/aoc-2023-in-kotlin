@@ -18,5 +18,5 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
 /**
  * The cleaner shorthand for printing output.
  */
-fun Any?.println(desc: String = "") = kotlin.io.println("${if (desc.isNotBlank()) "$desc:" else ""} $this")
+fun Any?.println(desc: String = "") = kotlin.io.println("${if (desc.isNotBlank()) "$desc:\n" else ""}$this")
 
