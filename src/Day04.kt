@@ -32,12 +32,12 @@ fun main() {
                 Card(row = index, winnings = winnings, otherNumbers = otherNumbers)
             }.let { games ->
                 //Keep a running copy of all the scratch card won from top to bottom starting wit 1
-                val copies = games.associate { it.row to 1 }.toMutableMap()
+                val copies = games.associate { card -> card.row to 1 }.toMutableMap()
 
                 games.forEach {
                     val winningCount = it.winnings.intersect(it.otherNumbers).size
-                    for (i in it.row + 1..it.row + winningCount) {
-                        copies[i] = copies[i]!! + copies[it.row]!!
+                    for (card in it.row + 1..it.row + winningCount) {
+                        copies[card] = copies[card]!! + copies[it.row]!!
                     }
 
                 }
